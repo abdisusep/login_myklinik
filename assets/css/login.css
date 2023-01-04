@@ -4,22 +4,37 @@ body{
 
 .btn{
     font-size: 14px !important;
+    border-radius: 12px !important;
+    border:none !important;
 }
 
 .card{
     border-radius: 12px;
 }
 
+
+.text-green{
+    color:#9ed236;
+}
+
 button.btn-login{
     width: 100%;
-    border-radius: 12px;
-    border:none;
     padding-top: 9px;
     padding-bottom: 9px;
     font-size: 14px !important;
 }
 
 .form-control{
+    border-radius: 12px;
+    font-size: 14px !important;
+    box-shadow: none !important;
+    padding-right: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border:1px solid #ced4da;
+}
+
+.form-control.fc{
     border-radius: 12px;
     font-size: 14px !important;
     box-shadow: none !important;
@@ -44,7 +59,7 @@ button.btn-login{
 }
 
 .shadow{
-    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.14) !important;
+    box-shadow: 0 0.5rem 5rem #93cb3b !important;
 }
 
 /*background animation*/
@@ -157,7 +172,7 @@ button.btn-login{
     0%{
         transform: translateY(0) rotate(0deg);
         opacity: 1;
-        border-radius: 0;
+        border-radius: 10%;
     }
 
     100%{

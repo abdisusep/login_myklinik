@@ -35,30 +35,34 @@
                                 <img src="https://app.myklinik.id/uploaded/logomyklinik.png" width="200px" class="mb-2">
                                 <p style="color:#0094dd;">Silahkan Login Guys</p>
                             </div>
-                            <form class="row g-2">
+                            <form class="row g-2" role="form" method="POST" id="oForm" name="oForm">
                                 <div class="input-group mb-1">
-                                  <input type="text" class="form-control" placeholder="Login Key">
-                                  <span class="input-group-text"><i class="fa-solid fa-key" style="color:#9ed236;"></i></span>
+                                  <input type="text" class="form-control fc" name="ckeyKlinik" id="ckeyKlinik" placeholder="Login Key" maxlength="6" oninput="checkInput()" required>
+                                  <span class="input-group-text"><i class="fa-solid fa-key text-green"></i></span>
                                 </div>
                                 <div class="input-group mb-1">
-                                  <input type="text" class="form-control" placeholder="Username">
-                                  <span class="input-group-text"><i class="fa-solid fa-user" style="color:#9ed236;"></i></span>
+                                  <input type="text" class="form-control fc" name="cUser" id="cUser" placeholder="Username" oninput="checkInput()" required>
+                                  <span class="input-group-text"><i class="fa-solid fa-user text-green"></i></span>
                                 </div>
                                 <div class="input-group mb-1">
-                                  <input type="text" class="form-control" placeholder="Password">
-                                  <span class="input-group-text"><i class="fa-solid fa-eye" style="color:#9ed236;"></i></span>
+                                  <input type="password" class="form-control fc" name="cPassword" id="cPassword" placeholder="Password" oninput="checkInput()" required>
+                                    <span class="input-group-text">
+                                        <a href="javascript:void(0);" id="show_password">
+                                            <i class="fa-solid fa-eye text-green" id="icon-eye"></i>
+                                        </a>
+                                    </span>
                                 </div>
                                 <div class="form-check ms-2">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                                    <input type="checkbox" class="form-check-input" name="setcookie" value="true" checked id="setcookie">
+                                    <label class="form-check-label" for="setcookie">Remember me</label>
                                 </div>
 
                                 <div>
-                                  <button type="button" class="btn btn-primary btn-login disabled"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+                                  <button type="submit" id="btnSubmit" class="btn btn-primary btn-login disabled"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
                                 </div>
 
                                 <div class="text-center">
-                                  <a href="#" class="btn btn-link text-decoration-none">Forgot password</a>
+                                  <a href="javascript:void(0)" class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#lupaPassword">Forgot password</a>
                                 </div>
 
                             </form>
@@ -70,7 +74,63 @@
         
     </div>
 
+    <!-- Modal Lupa Password -->
+    <div class="modal fade" id="lupaPassword" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form class="ps-5 pe-5">
+                    <div class="text-center">
+                        <img src="https://app.myklinik.id/uploaded/logomyklinik.png" width="200px" class="mb-2">
+                        <p>Masukkan alamat email yang sudah terverifikasi, kami akan mengirimkan alamat untuk  reset password anda.</p>
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope text-green"></i></span>
+                      <input type="text" class="form-control border-left-none" placeholder="Alamat email">
+                    </div>
+                    <div class="mb-5">
+                        <button type="button" class="btn btn-primary">Kirim Reset Password</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+
     <script src="assets/js/jquery-3.6.3.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        let show = true;
+        $("#show_password").click(function () {
+            if (show) {
+                show = false;
+                $(this).empty();
+                $(this).append('<i class="fa-solid fa-eye-slash text-green"></i>');
+                $("#cPassword").attr('type','text');
+            }else{
+                show = true;
+                $(this).empty();
+                $(this).append('<i class="fa-solid fa-eye text-green"></i>');
+                $("#cPassword").attr('type','password');
+            }
+        });
+
+        checkInput();
+        function checkInput() {
+            let key      = $("#ckeyKlinik").val();
+            let username = $("#cUser").val();
+            let password = $("#cPassword").val();
+
+            if (key!="" && username!="" && password!="") {
+                $("#btnSubmit").removeClass("disabled");
+            }else{
+                $("#btnSubmit").addClass("disabled");
+            }
+        }
+    </script>
 </body>
 </html>
