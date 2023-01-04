@@ -28,7 +28,7 @@
 
         <div class="container vh-100 d-flex align-items-center">
             <div class="row">
-                <div class="col-lg-4 m-auto col-md-12 col-12">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12 m-auto">
                     <div class="card border-0 shadow">
                         <div class="card-body ps-5 pe-5 pt-4 pb-4">
                             <div class="text-center">
@@ -59,8 +59,7 @@
 
                                 <div>
                                     <button type="submit" id="btnSubmit" class="btn btn-primary btn-login disabled">
-                                        <span id="textLogin"><i class="fa-solid fa-right-to-bracket"></i> Login</span>
-                                        <span id="loading" class="d-none"><img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" width="20px"> Loading</span>
+                                        <span><i class="fa-solid fa-right-to-bracket"></i> Login</span>
                                     </button>
                                 </div>
 
@@ -93,8 +92,7 @@
                     </div>
                     <div class="mb-4">
                         <button type="button" class="btn btn-primary disabled" id="send_email">
-                            <span id="textEmail"><i class="fa-solid fa-paper-plane"></i> Kirim Reset Password</span>
-                            <span id="loadingEmail" class="d-none"><img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" width="20px"> Loading</span>
+                            <span><i class="fa-solid fa-paper-plane"></i> Kirim Reset Password</span>
                         </button>
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>
@@ -140,6 +138,20 @@
             $("#btnSubmit").removeClass("disabled");
         }
 
+        $("#send_email").click(function (e) {
+            e.preventDefault();
+            $(this).empty();
+            $(this).append('<span><img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" width="20px"> Loading</span>');
+            $(this).addClass("disabled");
+            setTimeout(LoadingStopEmail, 2000);
+        });
+
+        function LoadingStopEmail() {
+            $("#send_email").empty();
+            $("#send_email").append('<span><i class="fa-solid fa-paper-plane"></i> Kirim Reset Password</span>');
+            $("#send_email").removeClass("disabled");
+        }
+
         checkInput();
         function checkInput() {
             let key      = $("#ckeyKlinik").val();
@@ -153,6 +165,7 @@
             }
         }
 
+        checkInputEmail();
         function checkInputEmail() {
             let email = $("#cEmail").val();
 
