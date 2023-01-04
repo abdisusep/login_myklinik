@@ -58,7 +58,10 @@
                                 </div>
 
                                 <div>
-                                  <button type="submit" id="btnSubmit" class="btn btn-primary btn-login disabled"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+                                    <button type="submit" id="btnSubmit" class="btn btn-primary btn-login disabled">
+                                        <span id="textLogin"><i class="fa-solid fa-right-to-bracket"></i> Login</span>
+                                        <span id="loading" class="d-none"><img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" width="20px"> Loading</span>
+                                    </button>
                                 </div>
 
                                 <div class="text-center">
@@ -85,11 +88,14 @@
                         <p>Masukkan alamat email yang sudah terverifikasi, kami akan mengirimkan alamat untuk  reset password anda.</p>
                     </div>
                     <div class="input-group mb-3">
-                      <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope text-green"></i></span>
-                      <input type="text" class="form-control border-left-none" placeholder="Alamat email">
+                      <span class="input-group-text"><i class="fa-solid fa-envelope text-green"></i></span>
+                      <input type="text" class="form-control" name="cEmail" id="cEmail" style="border-left:none; padding-left: 0;" placeholder="Alamat email" oninput="checkInputEmail();">
                     </div>
                     <div class="mb-5">
-                        <button type="button" class="btn btn-primary">Kirim Reset Password</button>
+                        <button type="button" class="btn btn-primary disabled" id="send_email">
+                            <span id="textEmail"><i class="fa-solid fa-paper-plane"></i> Kirim Reset Password</span>
+                            <span id="loadingEmail" class="d-none"><img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" width="20px"> Loading</span>
+                        </button>
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>
                 </form>
@@ -119,6 +125,21 @@
             }
         });
 
+        $("#btnSubmit").click(function (e) {
+            e.preventDefault();
+            $(this).empty();
+            $(this).append('<span><img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" width="20px"> Loading</span>');
+            $(this).addClass("disabled");
+            setTimeout(LoadingStop, 2000);
+        });
+
+
+        function LoadingStop() {
+            $("#btnSubmit").empty();
+            $("#btnSubmit").append('<span><i class="fa-solid fa-right-to-bracket"></i> Login</span>');
+            $("#btnSubmit").removeClass("disabled");
+        }
+
         checkInput();
         function checkInput() {
             let key      = $("#ckeyKlinik").val();
@@ -129,6 +150,16 @@
                 $("#btnSubmit").removeClass("disabled");
             }else{
                 $("#btnSubmit").addClass("disabled");
+            }
+        }
+
+        function checkInputEmail() {
+            let email = $("#cEmail").val();
+
+            if (email!="") {
+                $("#send_email").removeClass("disabled");
+            }else{
+                $("#send_email").addClass("disabled");
             }
         }
     </script>
