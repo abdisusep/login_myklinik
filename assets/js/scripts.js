@@ -95,7 +95,7 @@ presets.o = function (x, y, s, dx, dy) {
     return {
         x: x,
         y: y,
-        r: 12 * s,
+        r: 25 * s,
         w: 4 * s,
         dx: dx,
         dy: dy,
@@ -117,7 +117,7 @@ presets.x = function (x, y, s, dx, dy, dr, r) {
     return {
         x: x,
         y: y,
-        s: 20 * s,
+        s: 40 * s,
         w: 4 * s,
         r: r,
         dx: dx,
@@ -154,7 +154,7 @@ presets.x = function (x, y, s, dx, dy, dr, r) {
 
 for(var x = 0; x < Canvas.width; x++) {
     for(var y = 0; y < Canvas.height; y++) {
-        if(Math.round(Math.random() * 8000) == 1) {
+        if(Math.round(Math.random() * 20000) == 1) {
             var s = ((Math.random() * 5) + 1) / 10;
             if(Math.round(Math.random()) == 1)
                 elements.push(presets.o(x, y, s, 0, 0));
@@ -170,6 +170,6 @@ setInterval(function() {
     var time = new Date().getTime();
     for (var e in elements)
         elements[e].draw(ctx, time);
-}, 10);
+}, 1);
 
 // background 3
