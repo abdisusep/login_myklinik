@@ -26,6 +26,11 @@ let show = true;
             $("#btnSubmit").empty();
             $("#btnSubmit").append('<span><i class="fa-solid fa-right-to-bracket"></i> Login</span>');
             $("#btnSubmit").removeClass("disabled");
+
+            Swal.fire({
+              icon: 'error',
+              html: 'Username atau password tidak valid!',
+            })
         }
 
         $("#send_email").click(function (e) {
@@ -40,6 +45,11 @@ let show = true;
             $("#send_email").empty();
             $("#send_email").append('<span><i class="fa-solid fa-paper-plane"></i> Kirim Reset Password</span>');
             $("#send_email").removeClass("disabled");
+
+            Swal.fire({
+              icon: 'success',
+              html: 'Berhasil terkirim!',
+            })
         }
 
         checkInput();
