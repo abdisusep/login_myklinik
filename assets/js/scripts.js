@@ -86,7 +86,7 @@ presets.o = function (x, y, s, dx, dy) {
         x: x,
         y: y,
         r: 12 * s,
-        w: 5 * s,
+        w: 4 * s,
         dx: dx,
         dy: dy,
         draw: function(ctx, t) {
@@ -108,7 +108,7 @@ presets.x = function (x, y, s, dx, dy, dr, r) {
         x: x,
         y: y,
         s: 20 * s,
-        w: 5 * s,
+        w: 4 * s,
         r: r,
         dx: dx,
         dy: dy,
