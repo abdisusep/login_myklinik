@@ -29,7 +29,7 @@
         <div class="container vh-100 d-flex align-items-center">
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12 m-auto">
-                    <div class="card border-0 shadow">
+                    <div class="card border-0 shadow-sm">
                         <div class="card-body ps-5 pe-5 pt-4 pb-4">
                             <div class="text-center">
                                 <img src="https://app.myklinik.id/uploaded/logomyklinik.png" width="200px" class="mb-2">
@@ -107,74 +107,7 @@
 
     <script src="assets/js/jquery-3.6.3.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript">
-        let show = true;
-        $("#show_password").click(function () {
-            if (show) {
-                show = false;
-                $(this).empty();
-                $(this).append('<i class="fa-solid fa-eye-slash text-green"></i>');
-                $("#cPassword").attr('type','text');
-            }else{
-                show = true;
-                $(this).empty();
-                $(this).append('<i class="fa-solid fa-eye text-green"></i>');
-                $("#cPassword").attr('type','password');
-            }
-        });
-
-        $("#btnSubmit").click(function (e) {
-            e.preventDefault();
-            $(this).empty();
-            $(this).append('<span><img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" width="20px"> Loading</span>');
-            $(this).addClass("disabled");
-            setTimeout(LoadingStop, 2000);
-        });
-
-
-        function LoadingStop() {
-            $("#btnSubmit").empty();
-            $("#btnSubmit").append('<span><i class="fa-solid fa-right-to-bracket"></i> Login</span>');
-            $("#btnSubmit").removeClass("disabled");
-        }
-
-        $("#send_email").click(function (e) {
-            e.preventDefault();
-            $(this).empty();
-            $(this).append('<span><img src="https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif" width="20px"> Loading</span>');
-            $(this).addClass("disabled");
-            setTimeout(LoadingStopEmail, 2000);
-        });
-
-        function LoadingStopEmail() {
-            $("#send_email").empty();
-            $("#send_email").append('<span><i class="fa-solid fa-paper-plane"></i> Kirim Reset Password</span>');
-            $("#send_email").removeClass("disabled");
-        }
-
-        checkInput();
-        function checkInput() {
-            let key      = $("#ckeyKlinik").val();
-            let username = $("#cUser").val();
-            let password = $("#cPassword").val();
-
-            if (key!="" && username!="" && password!="") {
-                $("#btnSubmit").removeClass("disabled");
-            }else{
-                $("#btnSubmit").addClass("disabled");
-            }
-        }
-
-        checkInputEmail();
-        function checkInputEmail() {
-            let email = $("#cEmail").val();
-
-            if (email!="") {
-                $("#send_email").removeClass("disabled");
-            }else{
-                $("#send_email").addClass("disabled");
-            }
-        }
-    </script>
+    <script src="assets/js/scripts.js"></script>
+    
 </body>
 </html>
