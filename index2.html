@@ -30,11 +30,11 @@
                               <span class="input-group-text"><i class="fa-solid fa-key text-green"></i></span>
                             </div>
                             <div class="input-group mb-1">
-                              <input type="text" class="form-control fc" name="cUser" id="cUser" placeholder="Username" oninput="checkInput()" required>
+                              <input type="text" class="form-control fc" name="cUser" id="cUser" placeholder="Username" oninput="checkInput()" autocomplete="off" required>
                               <span class="input-group-text"><i class="fa-solid fa-user text-green"></i></span>
                             </div>
                             <div class="input-group mb-1">
-                              <input type="password" class="form-control fc" name="cPassword" id="cPassword" placeholder="Password" oninput="checkInput()" required>
+                              <input type="password" class="form-control fc" name="cPassword" id="cPassword" placeholder="Password" oninput="checkInput()" autocomplete="off" required>
                                 <span class="input-group-text">
                                     <a href="javascript:void(0);" id="show_password">
                                         <i class="fa-solid fa-eye text-green" id="icon-eye"></i>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="input-group mb-3">
                       <span class="input-group-text"><i class="fa-solid fa-envelope text-green"></i></span>
-                      <input type="text" class="form-control" name="cEmail" id="cEmail" style="border-left:none; padding-left: 0;" placeholder="Alamat email" oninput="checkInputEmail();">
+                      <input type="email" class="form-control forgot-pass" name="cEmail" id="cEmail" placeholder="Alamat email" oninput="checkInputEmail();">
                     </div>
                     <div class="mb-4">
                         <button type="button" class="btn btn-primary disabled" id="send_email">

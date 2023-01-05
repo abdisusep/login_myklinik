@@ -13,6 +13,7 @@
 <body>
 
     <div class="area">
+
         <ul class="circles">
             <li></li>
             <li></li>
@@ -37,15 +38,15 @@
                             </div>
                             <form class="row g-2" role="form" method="POST" id="oForm" name="oForm">
                                 <div class="input-group mb-1">
-                                  <input type="text" class="form-control fc" name="ckeyKlinik" id="ckeyKlinik" placeholder="Login Key" maxlength="6" oninput="checkInput()" required>
+                                  <input type="text" class="form-control fc" name="ckeyKlinik" id="ckeyKlinik" placeholder="Login Key" maxlength="6" oninput="checkInput()" autofocus required>
                                   <span class="input-group-text"><i class="fa-solid fa-key text-green"></i></span>
                                 </div>
                                 <div class="input-group mb-1">
-                                  <input type="text" class="form-control fc" name="cUser" id="cUser" placeholder="Username" oninput="checkInput()" required>
+                                  <input type="text" class="form-control fc" name="cUser" id="cUser" placeholder="Username" oninput="checkInput()" autocomplete="off" required>
                                   <span class="input-group-text"><i class="fa-solid fa-user text-green"></i></span>
                                 </div>
                                 <div class="input-group mb-1">
-                                  <input type="password" class="form-control fc" name="cPassword" id="cPassword" placeholder="Password" oninput="checkInput()" required>
+                                  <input type="password" class="form-control fc" name="cPassword" id="cPassword" placeholder="Password" oninput="checkInput()" autocomplete="off" required>
                                     <span class="input-group-text">
                                         <a href="javascript:void(0);" id="show_password">
                                             <i class="fa-solid fa-eye text-green" id="icon-eye"></i>
@@ -78,36 +79,36 @@
 
     <!-- Modal Lupa Password -->
     <div class="modal fade" id="lupaPassword" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <form class="ps-5 pe-5">
-                    <div class="text-center mt-3">
-                        <img src="https://app.myklinik.id/uploaded/logomyklinik.png" width="200px" class="mb-2">
-                        <p>Masukkan alamat email yang sudah terverifikasi, kami akan mengirimkan alamat untuk  reset password anda.</p>
-                    </div>
-                    <div class="input-group mb-3">
-                      <span class="input-group-text"><i class="fa-solid fa-envelope text-green"></i></span>
-                      <input type="text" class="form-control" name="cEmail" id="cEmail" style="border-left:none; padding-left: 0;" placeholder="Alamat email" oninput="checkInputEmail();">
-                    </div>
-                    <div class="mb-4">
-                        <button type="button" class="btn btn-primary disabled" id="send_email">
-                            <span><i class="fa-solid fa-paper-plane"></i> Kirim Reset Password</span>
-                        </button>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </form>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form class="ps-5 pe-5">
+                        <div class="text-center mt-3">
+                            <img src="https://app.myklinik.id/uploaded/logomyklinik.png" width="200px" class="mb-2">
+                            <p>Masukkan alamat email yang sudah terverifikasi, kami akan mengirimkan alamat untuk  reset password anda.</p>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa-solid fa-envelope text-green"></i></span>
+                            <input type="email" class="form-control forgot-pass" name="cEmail" id="cEmail" placeholder="Alamat email" oninput="checkInputEmail();">
+                        </div>
+                        <div class="mb-4">
+                            <button type="button" class="btn btn-primary disabled" id="send_email">
+                                <span><i class="fa-solid fa-paper-plane"></i> Kirim Reset Password</span>
+                            </button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+
+                </div>
 
             </div>
-
         </div>
-      </div>
     </div>
 
 
     <script src="assets/js/jquery-3.6.3.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/scripts.js"></script>
-    
+
 </body>
 </html>

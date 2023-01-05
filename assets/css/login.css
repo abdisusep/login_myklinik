@@ -23,13 +23,15 @@ button.btn-login{
     font-size: 14px !important;
 }
 
-.form-control{
+.form-control.forgot-pass{
     border-radius: 12px;
     font-size: 14px !important;
     box-shadow: none !important;
     padding-right: 0;
     padding-top: 8px;
     padding-bottom: 8px;
+    border-left:none !important; 
+    padding-left: 0;
     border:1px solid #ced4da;
 }
 
@@ -43,6 +45,13 @@ button.btn-login{
     padding-bottom: 8px;
     border:1px solid #ced4da;
 }
+
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover, 
+.form-control:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 
 .input-group-text{
     border-radius: 12px;

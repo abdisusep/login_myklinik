@@ -14,6 +14,7 @@
 <body>
     
     <div class="background">
+
        <div class="cube"></div>
        <div class="cube"></div>
        <div class="cube"></div>
@@ -24,49 +25,50 @@
 
        <div class="container vh-100 d-flex align-items-center">
 
-        <div class="row">
-            <div class="col-lg-4 col-md-12 col-sm-12 col-12 m-auto">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body ps-5 pe-5 pt-4 pb-4">
-                        <div class="text-center">
-                            <img src="https://app.myklinik.id/uploaded/logomyklinik.png" width="200px" class="mb-2">
-                            <p style="color:#0094dd;">Silahkan Login Guys</p>
-                        </div>
-                        <form class="row g-2" role="form" method="POST" id="oForm" name="oForm">
-                            <div class="input-group mb-1">
-                              <input type="text" class="form-control fc" name="ckeyKlinik" id="ckeyKlinik" placeholder="Login Key" maxlength="6" oninput="checkInput()" required>
-                              <span class="input-group-text"><i class="fa-solid fa-key text-green"></i></span>
-                            </div>
-                            <div class="input-group mb-1">
-                              <input type="text" class="form-control fc" name="cUser" id="cUser" placeholder="Username" oninput="checkInput()" required>
-                              <span class="input-group-text"><i class="fa-solid fa-user text-green"></i></span>
-                            </div>
-                            <div class="input-group mb-1">
-                              <input type="password" class="form-control fc" name="cPassword" id="cPassword" placeholder="Password" oninput="checkInput()" required>
-                                <span class="input-group-text">
-                                    <a href="javascript:void(0);" id="show_password">
-                                        <i class="fa-solid fa-eye text-green" id="icon-eye"></i>
-                                    </a>
-                                </span>
-                            </div>
-                            <div class="form-check ms-2">
-                                <input type="checkbox" class="form-check-input" name="setcookie" value="true" checked id="setcookie">
-                                <label class="form-check-label" for="setcookie">Remember me</label>
-                            </div>
-                            <div>
-                                <button type="submit" id="btnSubmit" class="btn btn-primary btn-login disabled">
-                                    <span><i class="fa-solid fa-right-to-bracket"></i> Login</span>
-                                </button>
-                            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12 m-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body ps-5 pe-5 pt-4 pb-4">
                             <div class="text-center">
-                                <a href="javascript:void(0)" class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#lupaPassword">Forgot password</a>
+                                <img src="https://app.myklinik.id/uploaded/logomyklinik.png" width="200px" class="mb-2">
+                                <p style="color:#0094dd;">Silahkan Login Guys</p>
                             </div>
-                        </form>
+                            <form class="row g-2" role="form" method="POST" id="oForm" name="oForm">
+                                <div class="input-group mb-1">
+                                  <input type="text" class="form-control fc" name="ckeyKlinik" id="ckeyKlinik" placeholder="Login Key" maxlength="6" oninput="checkInput()" required>
+                                  <span class="input-group-text"><i class="fa-solid fa-key text-green"></i></span>
+                                </div>
+                                <div class="input-group mb-1">
+                                  <input type="text" class="form-control fc" name="cUser" id="cUser" placeholder="Username" oninput="checkInput()" autocomplete="off" required>
+                                  <span class="input-group-text"><i class="fa-solid fa-user text-green"></i></span>
+                                </div>
+                                <div class="input-group mb-1">
+                                  <input type="password" class="form-control fc" name="cPassword" id="cPassword" placeholder="Password" oninput="checkInput()" autocomplete="off" required>
+                                    <span class="input-group-text">
+                                        <a href="javascript:void(0);" id="show_password">
+                                            <i class="fa-solid fa-eye text-green" id="icon-eye"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="form-check ms-2">
+                                    <input type="checkbox" class="form-check-input" name="setcookie" value="true" checked id="setcookie">
+                                    <label class="form-check-label" for="setcookie">Remember me</label>
+                                </div>
+                                <div>
+                                    <button type="submit" id="btnSubmit" class="btn btn-primary btn-login disabled">
+                                        <span><i class="fa-solid fa-right-to-bracket"></i> Login</span>
+                                    </button>
+                                </div>
+                                <div class="text-center">
+                                    <a href="javascript:void(0)" class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#lupaPassword">Forgot password</a>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
     </div>
 
     
@@ -84,7 +86,7 @@
                     </div>
                     <div class="input-group mb-3">
                       <span class="input-group-text"><i class="fa-solid fa-envelope text-green"></i></span>
-                      <input type="text" class="form-control" name="cEmail" id="cEmail" style="border-left:none; padding-left: 0;" placeholder="Alamat email" oninput="checkInputEmail();">
+                      <input type="text" class="form-control forgot-pass" name="cEmail" id="cEmail" placeholder="Alamat email" oninput="checkInputEmail();">
                     </div>
                     <div class="mb-4">
                         <button type="button" class="btn btn-primary disabled" id="send_email">
